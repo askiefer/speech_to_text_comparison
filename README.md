@@ -1,1 +1,1 @@
-# speech_to_text_comparison
+# Speech to Text Comparison between AssemblyAI and Deepgram
