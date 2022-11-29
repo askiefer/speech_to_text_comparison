@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Deployment Tutorial</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+ <h1 class="text-center">
+	<h1>Natural Language Processing Model</h1>
+
+<!--      Main Input For Receiving Query to our ML-->
+    <form class="p-3 text-center" action= '/', method="post" enctype="multipart/form-data">
+    	<input class="form-control" type = "file" name="videofile" >
+        <input class="btn btn-primary mt-3" type="submit" value="Get Transcript">
+    </form>
+     {% if confidence %}
+     <h3>Confidence</h3>
+        <p class="text-center">{{confidence}}</p>
+    {% endif %}
+
+   {% if groundtruth %}
+     <h3>Groundtruth</h3>
+        <p class="text-center">{{groundtruth}}</p>
+    {% endif %}
+     {% if assembly %}
+     <h3>Predicted</h3>
+        <p class="text-center">{{assembly}}</p>
+    {% endif %}
+
+
+</body>
+</html>
